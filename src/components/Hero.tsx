@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative mb-8">
             <img
-              src="/lovable-uploads/e0b2217f-751d-4886-926c-7c7ef93022de.png"
+              src="/lovable-uploads/99b1fd0c-c0ae-4ebf-81cd-118020eb01d1.png"
               alt="Abdul Kader"
               className="w-48 h-48 rounded-full mx-auto object-cover shadow-2xl border-4 border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 hover:scale-105"
             />
