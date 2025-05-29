@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Globe, MessageSquare, User, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, MessageSquare, User, Linkedin, Facebook, Send } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -36,41 +36,45 @@ const Contact = () => {
       icon: Phone,
       label: "Phone",
       value: "+8801733687284",
-      href: "tel:+8801733687284"
+      href: "tel:+8801733687284",
+      color: "hover:bg-green-600"
     },
     {
       icon: MessageSquare,
       label: "Skype",
       value: "mdkaderjohn",
-      href: "skype:mdkaderjohn?chat"
+      href: "skype:mdkaderjohn?chat",
+      color: "hover:bg-blue-600"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "itabdulkader",
-      href: "https://linkedin.com/in/itabdulkader"
+      href: "https://linkedin.com/in/itabdulkader",
+      color: "hover:bg-blue-700"
     },
     {
       icon: Facebook,
       label: "Facebook",
       value: "kaderjohn3",
-      href: "https://facebook.com/kaderjohn3"
+      href: "https://facebook.com/kaderjohn3",
+      color: "hover:bg-blue-800"
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-900 text-white">
+    <section id="contact" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Contact Info</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Ready to transform your business with Zoho? Let's discuss your project
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Contact Information */}
             <div>
               <h3 className="text-2xl font-semibold mb-8">Get In Touch</h3>
@@ -78,8 +82,8 @@ const Contact = () => {
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
-                    <div key={index} className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
+                    <div key={index} className="group flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -102,20 +106,49 @@ const Contact = () => {
                     <a
                       key={index}
                       href={social.href}
-                      className="flex items-center space-x-4 hover:text-orange-400 transition-colors"
+                      className="group flex items-center space-x-4 hover:text-orange-400 transition-all duration-300"
                     >
-                      <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-colors">
+                      <div className={`w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${social.color} shadow-lg`}>
                         <IconComponent className="w-6 h-6" />
                       </div>
                       <div>
-                        <p className="text-gray-400 text-sm">{social.label}</p>
-                        <p className="text-white font-medium">{social.value}</p>
+                        <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">{social.label}</p>
+                        <p className="text-white font-medium group-hover:text-orange-400 transition-colors">{social.value}</p>
                       </div>
                     </a>
                   );
                 })}
               </div>
             </div>
+          </div>
+
+          {/* Quick Contact Form */}
+          <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 backdrop-blur-sm">
+            <h3 className="text-2xl font-semibold mb-6 text-center">Send a Quick Message</h3>
+            <form className="grid md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                className="md:col-span-2 bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors resize-none"
+              ></textarea>
+              <button
+                type="submit"
+                className="md:col-span-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-semibold flex items-center justify-center gap-2 hover:scale-105 shadow-lg"
+              >
+                <Send className="w-5 h-5" />
+                Send Message
+              </button>
+            </form>
           </div>
           
           <div className="mt-16 text-center border-t border-gray-800 pt-8">

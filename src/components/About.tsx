@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Award, Users, Clock } from 'lucide-react';
 
 const About = () => {
   const highlights = [
@@ -11,61 +11,85 @@ const About = () => {
     "Cost-effective, high-quality solutions"
   ];
 
+  const stats = [
+    { icon: Award, value: "8+", label: "Years Experience" },
+    { icon: Users, value: "100+", label: "Happy Clients" },
+    { icon: CheckCircle, value: "200+", label: "Projects Completed" },
+    { icon: Clock, value: "24/7", label: "Support Available" }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto"></div>
+            <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Transforming businesses through innovative Zoho solutions
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-2xl font-semibold text-white mb-6">
                 Zoho Expert & Business Consultant
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 I provide strategic consulting to help businesses maximize Zoho's potential and 
                 build custom applications tailored to specific requirements. With in-depth knowledge 
                 of Zoho CRM, Books, Inventory, Billing, Desk, Analytics, Flow, and Creator.
               </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-gray-300 mb-8 leading-relaxed">
                 I deliver cost-effective, high-quality solutions that enhance automation, efficiency, 
                 and business growth across various industries.
               </p>
               
               <div className="space-y-3">
                 {highlights.map((highlight, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{highlight}</span>
+                  <div key={index} className="flex items-center group">
+                    <CheckCircle className="w-5 h-5 text-orange-400 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                    <span className="text-gray-300 group-hover:text-white transition-colors">{highlight}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-gray-50 p-8 rounded-xl">
-              <h4 className="text-xl font-semibold text-gray-900 mb-6">Quick Facts</h4>
+            <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-700 backdrop-blur-sm">
+              <h4 className="text-xl font-semibold text-white mb-6">Quick Facts</h4>
               <div className="space-y-4">
-                <div>
-                  <span className="font-semibold text-gray-700">Location:</span>
-                  <span className="text-gray-600 ml-2">Dhaka, Bangladesh</span>
+                <div className="flex justify-between">
+                  <span className="font-semibold text-gray-400">Location:</span>
+                  <span className="text-gray-300">Dhaka, Bangladesh</span>
                 </div>
-                <div>
-                  <span className="font-semibold text-gray-700">Experience:</span>
-                  <span className="text-gray-600 ml-2">8+ Years in Zoho</span>
+                <div className="flex justify-between">
+                  <span className="font-semibold text-gray-400">Experience:</span>
+                  <span className="text-gray-300">8+ Years in Zoho</span>
                 </div>
-                <div>
-                  <span className="font-semibold text-gray-700">Specialization:</span>
-                  <span className="text-gray-600 ml-2">Zoho Development & Integration</span>
+                <div className="flex justify-between">
+                  <span className="font-semibold text-gray-400">Specialization:</span>
+                  <span className="text-gray-300">Zoho Development</span>
                 </div>
-                <div>
-                  <span className="font-semibold text-gray-700">Engagement:</span>
-                  <span className="text-gray-600 ml-2">Hourly or Project-based</span>
+                <div className="flex justify-between">
+                  <span className="font-semibold text-gray-400">Engagement:</span>
+                  <span className="text-gray-300">Hourly/Project-based</span>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <div key={index} className="text-center p-6 bg-gray-900/50 rounded-xl border border-gray-700 hover:border-orange-500/50 transition-all duration-300 hover:scale-105">
+                  <IconComponent className="w-8 h-8 text-orange-400 mx-auto mb-3" />
+                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
