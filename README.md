@@ -1,158 +1,73 @@
+# Welcome to your Lovable project
 
-# Abdul Kader - Zoho Expert & Consultant Portfolio
+## Project info
 
-A modern, responsive portfolio website for Abdul Kader, a Zoho Expert and Business Consultant with 8+ years of experience.
+**URL**: https://lovable.dev/projects/f4725b5a-0df2-4079-8849-3bf4c0b0f105
 
-## Features
+## How can I edit this code?
 
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Modern UI**: Clean, professional design with smooth animations
-- **Interactive Elements**: Hover effects, scroll animations, and interactive cards
-- **Contact Form**: Functional contact form with validation
-- **Client Showcase**: Display of verified clients and work areas
-- **SEO Optimized**: Proper meta tags and semantic HTML structure
+There are several ways of editing your application.
 
-## Technologies Used
+**Use Lovable**
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **CSS Framework**: Bootstrap 5.3.0
-- **Icons**: Font Awesome 6.4.0
-- **Backend**: Node.js with Express.js
-- **Security**: Helmet.js for security headers
-- **Performance**: Compression middleware for gzip compression
+Simply visit the [Lovable Project](https://lovable.dev/projects/f4725b5a-0df2-4079-8849-3bf4c0b0f105) and start prompting.
 
-## Project Structure
+Changes made via Lovable will be committed automatically to this repo.
 
-```
-├── index.html          # Main HTML file
-├── styles.css          # Custom CSS styles
-├── script.js           # JavaScript functionality
-├── server.js           # Node.js Express server
-├── package.json        # Node.js dependencies (existing)
-└── README.md           # Project documentation
-```
+**Use your preferred IDE**
 
-## Installation & Setup
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-1. **Clone or download the project files**
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-2. **Install required Node.js dependencies**:
-   ```bash
-   npm install express cors helmet compression
-   ```
+Follow these steps:
 
-3. **Start the development server**:
-   ```bash
-   node server.js
-   ```
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-4. **Open your browser and visit**:
-   ```
-   http://localhost:3000
-   ```
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-## Available Scripts
+# Step 3: Install the necessary dependencies.
+npm i
 
-- `node server.js` - Start the production server
-- The application uses vanilla HTML, CSS, and JavaScript - no build process needed
-
-## Features Overview
-
-### Sections
-
-1. **Hero Section**: Introduction with profile image and call-to-action buttons
-2. **About Section**: Professional background, experience, and quick facts
-3. **Services Section**: Comprehensive list of Zoho services offered
-4. **Skills Section**: Technical skills organized by categories
-5. **Work Areas Section**: Industries and business types served
-6. **Verified Clients Section**: Showcase of global clients with details
-7. **Contact Section**: Contact information and inquiry form
-
-### Interactive Features
-
-- Smooth scrolling navigation
-- Active navigation link highlighting
-- Hover animations on cards and buttons
-- Scroll-triggered fade-in animations
-- Form validation and submission handling
-- Responsive mobile navigation
-
-### Performance Optimizations
-
-- Gzip compression enabled
-- Optimized images and assets
-- Minimal external dependencies
-- Efficient CSS and JavaScript
-- Lazy loading for animations
-
-## Customization
-
-### Updating Content
-
-- **Personal Information**: Edit the HTML content in `index.html`
-- **Styling**: Modify `styles.css` for visual changes
-- **Functionality**: Update `script.js` for behavioral changes
-- **Clients Data**: Update the `clients` array in `script.js`
-- **Work Areas**: Update the `workAreas` array in `script.js`
-
-### Color Scheme
-
-The website uses CSS custom properties for easy color customization:
-
-```css
-:root {
-    --primary-color: #f97316;
-    --primary-hover: #ea580c;
-    --secondary-color: #1f2937;
-    --dark-bg: #111827;
-    --darker-bg: #000000;
-}
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-## Deployment
+**Edit a file directly in GitHub**
 
-This is a Node.js application that can be deployed to any hosting service:
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-### Node.js Hosting (Recommended)
-- Deploy to Heroku, Railway, Render, or similar
-- Includes Express server for enhanced functionality and API endpoints
+**Use GitHub Codespaces**
 
-### Static Hosting Alternative
-- Deploy HTML, CSS, and JS files to Netlify, Vercel, or GitHub Pages
-- Remove server.js if using static hosting only (contact form won't work)
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## Browser Support
+## What technologies are used for this project?
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+This project is built with:
 
-## Dependencies
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-The application requires these Node.js packages:
-- `express` - Web framework
-- `cors` - Cross-origin resource sharing
-- `helmet` - Security headers
-- `compression` - Gzip compression
+## How can I deploy this project?
 
-Install with: `npm install express cors helmet compression`
+Simply open [Lovable](https://lovable.dev/projects/f4725b5a-0df2-4079-8849-3bf4c0b0f105) and click on Share -> Publish.
 
-## License
+## Can I connect a custom domain to my Lovable project?
 
-This project is licensed under the MIT License.
+Yes, you can!
 
-## Contact
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-For any questions or customizations, please contact:
-
-**Abdul Kader**
-- Email: akader@infitarit.com
-- Phone: +8801733687284
-- Website: www.infitarit.com
-- LinkedIn: linkedin.com/in/itabdulkader
-
----
-
-*This portfolio showcases 8+ years of Zoho expertise and professional consulting services.*
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
