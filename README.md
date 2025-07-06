@@ -28,7 +28,7 @@ A modern, responsive portfolio website for Abdul Kader, a Zoho Expert and Busine
 ├── styles.css          # Custom CSS styles
 ├── script.js           # JavaScript functionality
 ├── server.js           # Node.js Express server
-├── package.json        # Node.js dependencies
+├── package.json        # Node.js dependencies (existing)
 └── README.md           # Project documentation
 ```
 
@@ -36,14 +36,14 @@ A modern, responsive portfolio website for Abdul Kader, a Zoho Expert and Busine
 
 1. **Clone or download the project files**
 
-2. **Install Node.js dependencies**:
+2. **Install required Node.js dependencies**:
    ```bash
-   npm install
+   npm install express cors helmet compression
    ```
 
 3. **Start the development server**:
    ```bash
-   npm start
+   node server.js
    ```
 
 4. **Open your browser and visit**:
@@ -53,9 +53,8 @@ A modern, responsive portfolio website for Abdul Kader, a Zoho Expert and Busine
 
 ## Available Scripts
 
-- `npm start` - Start the production server
-- `npm run dev` - Start the development server (same as start)
-- `npm run build` - No build process needed for this static site
+- `node server.js` - Start the production server
+- The application uses vanilla HTML, CSS, and JavaScript - no build process needed
 
 ## Features Overview
 
@@ -112,15 +111,15 @@ The website uses CSS custom properties for easy color customization:
 
 ## Deployment
 
-This is a static website that can be deployed to any web hosting service:
+This is a Node.js application that can be deployed to any hosting service:
 
 ### Node.js Hosting (Recommended)
 - Deploy to Heroku, Railway, Render, or similar
-- Includes Express server for enhanced functionality
+- Includes Express server for enhanced functionality and API endpoints
 
-### Static Hosting
+### Static Hosting Alternative
 - Deploy HTML, CSS, and JS files to Netlify, Vercel, or GitHub Pages
-- Remove server.js and package.json if using static hosting only
+- Remove server.js if using static hosting only (contact form won't work)
 
 ## Browser Support
 
@@ -129,6 +128,16 @@ This is a static website that can be deployed to any web hosting service:
 - Safari (latest)
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Dependencies
+
+The application requires these Node.js packages:
+- `express` - Web framework
+- `cors` - Cross-origin resource sharing
+- `helmet` - Security headers
+- `compression` - Gzip compression
+
+Install with: `npm install express cors helmet compression`
 
 ## License
 
