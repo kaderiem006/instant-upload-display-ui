@@ -1,10 +1,11 @@
 
 import React from 'react';
-import { CheckCircle, Award, Users, Clock } from 'lucide-react';
+import { CheckCircle, Award, Users, Clock, Star, Globe } from 'lucide-react';
 
 const About = () => {
   const highlights = [
     "8+ years of Zoho expertise since 2015",
+    "Zoho Official Partner",
     "Strategic consulting for business growth",
     "Custom application development",
     "System integration specialist",
@@ -32,6 +33,10 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
+              <div className="flex items-center mb-4">
+                <Star className="w-6 h-6 text-orange-400 mr-2" />
+                <span className="text-orange-400 font-semibold text-lg">Zoho Official Partner</span>
+              </div>
               <h3 className="text-2xl font-semibold text-white mb-6">
                 Zoho Expert & Business Consultant
               </h3>
@@ -73,6 +78,10 @@ const About = () => {
                 <div className="flex justify-between">
                   <span className="font-semibold text-gray-400">Engagement:</span>
                   <span className="text-gray-300">Hourly/Project-based</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="font-semibold text-gray-400">Partnership:</span>
+                  <span className="text-orange-400 font-semibold">Zoho Official Partner</span>
                 </div>
               </div>
             </div>

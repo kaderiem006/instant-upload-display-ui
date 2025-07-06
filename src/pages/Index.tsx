@@ -4,6 +4,7 @@ import About from '@/components/About';
 import Services from '@/components/Services';
 import Skills from '@/components/Skills';
 import WorkAreas from '@/components/WorkAreas';
+import VerifiedClients from '@/components/VerifiedClients';
 import Contact from '@/components/Contact';
 import Navigation from '@/components/Navigation';
 
@@ -16,6 +17,7 @@ const Index = () => {
       <Services />
       <Skills />
       <WorkAreas />
+      <VerifiedClients />
       <Contact />
     </div>
   );
