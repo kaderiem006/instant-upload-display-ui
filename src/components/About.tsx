@@ -4,7 +4,7 @@ import { CheckCircle, Award, Users, Clock, Star, Globe } from 'lucide-react';
 
 const About = () => {
   const highlights = [
-    "8+ years of Zoho expertise since 2015",
+    "10+ years of Zoho expertise since 2015",
     "Zoho Official Partner",
     "Strategic consulting for business growth",
     "Custom application development",
@@ -13,8 +13,8 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: Award, value: "8+", label: "Years Experience" },
-    { icon: Users, value: "100+", label: "Happy Clients" },
+    { icon: Award, value: "10+", label: "Years Experience" },
+    { icon: Users, value: "1500+", label: "Happy Clients" },
     { icon: CheckCircle, value: "200+", label: "Projects Completed" },
     { icon: Clock, value: "24/7", label: "Support Available" }
   ];
@@ -69,7 +69,7 @@ const About = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="font-semibold text-gray-400">Experience:</span>
-                  <span className="text-gray-300">8+ Years in Zoho</span>
+                  <span className="text-gray-300">10+ Years in Zoho</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-semibold text-gray-400">Specialization:</span>
