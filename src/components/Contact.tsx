@@ -1,8 +1,52 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, MessageSquare, User, Linkedin, Facebook, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    const templateParams = {
+      from_name: formData.get('name'),
+      from_email: formData.get('email'),
+      message: formData.get('message'),
+      to_email: 'akader@infitarit.com'
+    };
+
+    try {
+      // You'll need to replace these with your EmailJS credentials
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactInfo = [
     {
       icon: User,
@@ -125,34 +169,38 @@ const Contact = () => {
           {/* Quick Contact Form */}
           <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 backdrop-blur-sm">
             <h3 className="text-2xl font-semibold mb-6 text-center">Send a Quick Message</h3>
-            <form className="grid md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
               <input
                 name="name"
                 type="text"
                 placeholder="Your Name"
                 required
-                className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors"
+                disabled={isSubmitting}
+                className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors disabled:opacity-50"
               />
               <input
                 name="email"
                 type="email"
                 placeholder="Your Email"
                 required
-                className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors"
+                disabled={isSubmitting}
+                className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors disabled:opacity-50"
               />
               <textarea
                 name="message"
                 placeholder="Your Message"
                 rows={4}
                 required
-                className="md:col-span-2 bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors resize-none"
+                disabled={isSubmitting}
+                className="md:col-span-2 bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors resize-none disabled:opacity-50"
               ></textarea>
               <button
                 type="submit"
-                className="md:col-span-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-semibold flex items-center justify-center gap-2 hover:scale-105 shadow-lg"
+                disabled={isSubmitting}
+                className="md:col-span-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-semibold flex items-center justify-center gap-2 hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 <Send className="w-5 h-5" />
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
