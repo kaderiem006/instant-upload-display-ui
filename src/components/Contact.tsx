@@ -127,18 +127,24 @@ const Contact = () => {
             <h3 className="text-2xl font-semibold mb-6 text-center">Send a Quick Message</h3>
             <form className="grid md:grid-cols-2 gap-6">
               <input
+                name="name"
                 type="text"
                 placeholder="Your Name"
+                required
                 className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors"
               />
               <input
+                name="email"
                 type="email"
                 placeholder="Your Email"
+                required
                 className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors"
               />
               <textarea
+                name="message"
                 placeholder="Your Message"
                 rows={4}
+                required
                 className="md:col-span-2 bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-500 focus:outline-none transition-colors resize-none"
               ></textarea>
               <button

@@ -19,7 +19,13 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="font-bold text-xl text-white">Abdul Kader</div>
+          <a href="/" className="flex items-center">
+            <img 
+              src="https://infitarit.com/wp-content/uploads/2023/05/authorized-zoho-partner-.png" 
+              alt="Authorized Zoho Partner" 
+              className="h-10 w-auto"
+            />
+          </a>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
