@@ -23,12 +23,12 @@ const Contact = () => {
     };
 
     try {
-      // You'll need to replace these with your EmailJS credentials
+      // EmailJS configuration - replace with your actual values after setup
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_zoho_smtp', // Your EmailJS service ID
+        'template_contact', // Your EmailJS template ID
         templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'your_public_key_here' // Your EmailJS public key
       );
       
       toast({
